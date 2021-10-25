@@ -1,0 +1,114 @@
+<div style="background-color: rgb(203, 240, 240);">
+<div class="container">
+    <h3 class="text-center" style="margin-bottom: 2rem;color:rgb(8, 126, 126);">Customer Registration Form Detail View</h3> 
+    <h4 class="text-center" style="color: blueviolet;">Customer Details</h4>  
+        <div class="card" *ngFor="let info of data" style="width:60%;height:auto;border: 1px solid gray;padding:10px 20px;margin-top: 10px;margin-left: 25%;">
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col col-sm-4">  
+                    <label>Customer Name : </label>
+                </div>
+                <div class="col col-sm-8"> 
+                    <input type="text" name="Fname" class="form-control" [(ngModel)]="info.customerName"> 
+                </div>   
+            </div> 
+
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col col-sm-4"> 
+                    <label>Phone No. : </label>
+                </div>
+                <div class="col col-sm-8"> 
+                    <input type="tel" name="customerPhone" class="form-control"  [(ngModel)]="info.customerPhone"> 
+                </div> 
+            </div>  
+
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col col-sm-4"> 
+                    <label>Email : </label>
+                </div>
+                <div class="col col-sm-8"> 
+                    <input type="email" name="customerEmail" class="form-control"  [(ngModel)]="info.customerEmail"> 
+                </div> 
+            </div>   
+        </div> 
+
+        <div *ngFor="let info1 of data1">
+            <h4 class="text-center" style="color: blueviolet;">Branch Details</h4>
+            <div class="card" style="width:60%;height:auto;border: 1px solid gray;padding:10px 20px;margin-top: 10px;margin-left: 25%;">
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4">  
+                        <label>Branch Name : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="text" name="BranchName" class="form-control" [(ngModel)]="info1.BranchName"> 
+                    </div>  
+                </div>  
+                
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Email : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="email" name="BranchEmail" class="form-control" [(ngModel)]="info1.BranchEmail"> 
+                    </div> 
+                </div> 
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Phone No. : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="text" name="phoneNo" class="form-control" [(ngModel)]="info1.phoneNo"> 
+                    </div> 
+                </div>  
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Branch City : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="text" name="branchCity" class="form-control" [(ngModel)]="info1.branchCity"> 
+                    </div> 
+                </div>  
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Branch Address : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <textarea type="text" name="branchAddress" class="form-control" [(ngModel)]="info1.branchAddress"></textarea> 
+                    </div> 
+                </div>  
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Branch Type : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="radio" name="branchType"value="Main Branch" [(ngModel)]="info1.branchType">&nbsp;
+                            <span style="margin-right: 1rem;">Main Branch</span> 
+                        <input type="radio" name="BranchType" value="Sub Branch" [(ngModel)]="info1.branchType">&nbsp;
+                        <span style="margin-right: 1rem;">Sub Branch</span>  
+                     </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col col-sm-4"> 
+                        <label>Branch Business : </label>
+                    </div>
+                    <div class="col col-sm-8"> 
+                        <input type="checkbox" name="branchBusiness1" value="Marketing" [(ngModel)]="info1.branchBusiness1">&nbsp;
+                            <span style="margin-right: 1rem;">Marketing</span> 
+                        <input type="checkbox" name="branchBusiness2" value="IT" [(ngModel)]="info1.branchBusiness2">&nbsp;
+                            <span style="margin-right: 1rem;">IT</span> 
+                        <input type="checkbox" name="branchBusiness3" value="BPO" [(ngModel)]="info1.branchBusiness3">&nbsp;
+                            <span style="margin-right: 1rem;">BPO</span> 
+                        <!-- <input type="checkbox" name="branchBusiness4" value="Sales" [(ngModel)]="info1.branchBusiness4">&nbsp;
+                            <span style="margin-right: 1rem;">Sales</span> 
+                        <input type="checkbox" name="branchBusiness5" value="Electronics" [(ngModel)]="info1.branchBusiness5">&nbsp; 
+                            <span style="margin-right: 1rem;">Electronics</span>  -->
+                    </div>
+                </div> 
+            </div>
+        </div>  
+    </div>
+</div>

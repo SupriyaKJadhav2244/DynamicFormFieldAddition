@@ -1,0 +1,72 @@
+.ngclass{ 
+    background-color: gray;
+    width: 200px;
+}   
+
+.card{ 
+ border: 1px solid silver;
+ width: 200px;
+ box-shadow: 3px 3px 3px 3px gray;
+ margin: 10px;
+ padding: 10px;
+ display: inline-block;
+}  
+
+
+
+nav ul a,
+nav .brand-logo {
+ color: #444;
+}
+
+p {
+ line-height: 2rem;
+}
+
+.sidenav-trigger {
+ color: #26a69a;
+}
+
+.parallax-container {
+ min-height: 380px;
+ line-height: 0;
+ height: auto;
+ color: rgba(255,255,255,.9);
+}
+ .parallax-container .section {
+   width: 100%;
+ }
+
+@media only screen and (max-width : 992px) {
+ .parallax-container .section {
+   position: absolute;
+   top: 40%;
+ }
+ #index-banner .section {
+   top: 10%;
+ }
+}
+
+@media only screen and (max-width : 600px) {
+ #index-banner .section {
+   top: 0;
+ }
+}
+
+.icon-block {
+ padding: 0 15px;
+}
+.icon-block .material-icons {
+ font-size: inherit;
+}
+
+footer.page-footer {
+ margin: 0;
+} 
+
+@media (min-width: 250) { html {font-size:0.9rem;} } 
+@media (min-width: 640px) { html {font-size:0.9rem;} } 
+@media (min-width:768px) { html {font-size:0.9rem;} } 
+@media (min-width:992px) { html {font-size:0.9rem;} } 
+@media (min-width:1200px) { html {font-size:0.9rem;} } 
+@media (min-width:1400px) { html {font-size:0.9rem;} } 

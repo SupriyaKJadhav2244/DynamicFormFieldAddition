@@ -1,0 +1,26 @@
+{
+    "branch":[
+        { 
+          "BranchName": "Ameerpet",
+          "BranchEmail": "infoame@gmail.com",
+          "phoneNo": 915875825478,
+          "branchCity": "Hyderabad",
+          "branchAddress": "Plot 145, Vittalrao Nagar, Madhapur, Hyderabad - 500081",  
+          "branchType":"Main Branch",
+          "branchBusiness1":"BPO",
+          "branchBusiness2":"Sales",
+          "branchBusiness3":"Electronics"
+        },
+        { 
+            "BranchName": "Madhapur",
+            "BranchEmail": "infoame@gmail.com",
+            "phoneNo": 915875825478,
+            "branchCity": "Hyderabad",
+            "branchAddress": "Plot 145, Vittalrao Nagar, Madhapur, Hyderabad - 500081",  
+            "branchType":"Sub Branch",
+            "branchBusiness1":"BPO",
+            "branchBusiness2":"Sales",
+            "branchBusiness3":"Electronics"
+          }
+      ]
+}
