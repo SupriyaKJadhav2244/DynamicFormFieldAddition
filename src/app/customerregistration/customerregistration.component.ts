@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'; 
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray} from '@angular/forms'; 
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';   
 
 @Component({
   selector: 'app-customerregistration',
@@ -10,23 +10,23 @@ import { Router } from '@angular/router';
 export class CustomerregistrationComponent implements OnInit {
 
   RegiForm: any;  
-  information: any;
-
+  information: any; 
+  
   constructor(private formBuilder:FormBuilder,private router:Router) {}
 
   ngOnInit(): void {
     this.RegiForm = this.formBuilder.group({
       Fname : ['',Validators.required],
       Email : ['',[Validators.required,Validators.email]],
-      phone : ['',[Validators.required,Validators.maxLength(10)]],
+      phone : ['',[Validators.required,Validators.maxLength(13)]],
       password : ['',Validators.required],
       Cpassword : ['',Validators.required], 
-      data : this.formBuilder.array([
+      data : this.formBuilder.array([   
         this.initItemRows()
       ])
     },{
       validators:this.MustMatch('password','Cpassword')
-    })
+    }) 
   }
 
   get data(){
@@ -50,16 +50,16 @@ export class CustomerregistrationComponent implements OnInit {
   initItemRows(){
     return this.formBuilder.group({
       branch : ['',Validators.required],
-      branchEmail : ['',Validators.required],
-      branchphone : ['',Validators.required],
+      branchEmail : ['',[Validators.required,Validators.email]],
+      branchphone : ['',[Validators.required, Validators.maxLength(13)]],
       city : ['',Validators.required],
       BranchAddress : ['',Validators.required],
       BranchType : ['',Validators.required],
-      check1 : ['',Validators.required],
-      check2 : ['',Validators.required],
-      check3 : ['',Validators.required],
-      check4 : ['',Validators.required],
-      check5 : ['',Validators.required]
+      check1 : [''],
+      check2 : [''],
+      check3 : [''],
+      check4 : [''],
+      check5 : ['']  
     })
   }
 
@@ -68,25 +68,15 @@ export class CustomerregistrationComponent implements OnInit {
   }
 
   Registration(){
-    console.log(this.RegiForm.value);   
+    console.log(this.RegiForm.value);  
 
-    if(this.RegiForm.value.Email !== '' && this.RegiForm.value.password !== ''){  
-      alert("Registration Is Successful...");
+    if(this.RegiForm.value){  
+      alert("Registration Is Successful..."); 
+      sessionStorage.setItem('User','auth');
       this.router.navigate(['/DisplayData']);
     }else{
       alert("Please Enter Valid Data...");
       this.router.navigate(['/Registration']);
     }
-  }
-
-  // topicHasError = true;
-
-  // hasError(value:any){
-  //   if(value===null){
-  //     this.topicHasError = true;
-  //   }else{
-  //     this.topicHasError = false;
-  //   }
-  // }
-
+  }  
 }

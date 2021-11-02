@@ -70,17 +70,17 @@
         </div> 
 
         <div formArrayName="data">
-            <div class="card" *ngFor="let mob of data.controls;let i=index" [formGroupName]="i" style="width:60%;height:auto;border: 1px solid gray;padding:10px 20px;margin-top: 10px;margin-left: 25%;">
+            <div class="card" *ngFor="let Info of data.controls;let i=index" [formGroupName]="i" style="width:60%;height:auto;border: 1px solid gray;padding:10px 20px;margin-top: 10px;margin-left: 25%;">
                 <h3 class="text-center" style="margin-bottom: 2rem;color:rgb(8, 126, 126);">Branch Details</h3>
                 <div class="row" style="margin-bottom: 10px;">
                     <div class="col col-sm-4">    
                         <label>Branch Name : </label>
                     </div>
                     <div class="col col-sm-8"> 
-                        <input type="text" formControlName="branch" id="{{'branch'+i}}" class="form-control " [class.is-invalid]="RegiForm.get('branch')?.invalid && RegiForm.get('branch')?.touched" placeholder="Enter Branch Name">
-                        <!-- <span [class.d-none]="data.get('branch')?.valid && data.get('branch')?.untouched">
-                            <p class="text-danger" *ngIf="data.get('branch')?.errors?.required">Branch Name Is Required</p>  
-                        </span> -->
+                        <input type="text" formControlName="branch" id="{{'branch'+i}}" class="form-control " [class.is-invalid]="Info.get('branch')?.invalid && Info.get('branch')?.touched" placeholder="Enter Branch Name">
+                        <span *ngIf="Info.get('branch')?.invalid && Info.get('branch')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('branch')?.errors?.required">Branch Name Is Required</p>  
+                        </span>
                     </div>  
                 </div>  
                 
@@ -89,11 +89,11 @@
                         <label>Email : </label>
                     </div>
                     <div class="col col-sm-8"> 
-                        <input type="email" formControlName="branchEmail" id="{{'branchEmail'+i}}" class="form-control" [class.is-invalid]="RegiForm.get('branchEmail')?.invalid && RegiForm.get('branchEmail')?.touched" placeholder="Enter Your Email Id">
-                        <!-- <span *ngIf="RegiForm.get('branchEmail')?.invalid && RegiForm.get('branchEmail')?.touched">
-                            <p class="text-danger" *ngIf="RegiForm.get('branchEmail')?.errors?.required">Email Is Required</p>
-                            <p class="text-danger" *ngIf="RegiForm.get('branchEmail')?.errors?.email">Enter Valid Email Id</p>
-                        </span>  -->
+                        <input type="email" formControlName="branchEmail" id="{{'branchEmail'+i}}" class="form-control" [class.is-invalid]="Info.get('branchEmail')?.invalid && Info.get('branchEmail')?.touched" placeholder="Enter Your Email Id">
+                        <span *ngIf="Info.get('branchEmail')?.invalid && Info.get('branchEmail')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('branchEmail')?.errors?.required">Email Is Required</p>
+                            <p class="text-danger" *ngIf="Info.get('branchEmail')?.errors?.email">Enter Valid Email Id</p>
+                        </span> 
                     </div> 
                 </div> 
 
@@ -102,11 +102,11 @@
                         <label>Phone No. : </label>
                     </div>
                     <div class="col col-sm-8"> 
-                        <input type="text" formControlName="branchphone" id="{{'branchphone'+i}}" class="form-control" [class.is-invalid]="RegiForm.get('branchphone')?.invalid && RegiForm.get('branchphone')?.touched" pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" placeholder="Enter Branch Phone Number">
-                        <!-- <span *ngIf="RegiForm.get('branchphone')?.invalid && RegiForm.get('branchphone')?.touched">
-                            <p class="text-danger" *ngIf="RegiForm.get('branchphone')?.errors?.required">Phone Number Is Required</p> 
-                            <p class="text-danger" *ngIf="RegiForm.get('branchphone')?.errors?.pattern">Enter Valid Number</p>
-                        </span>  -->
+                        <input type="text" formControlName="branchphone" id="{{'branchphone'+i}}" class="form-control" [class.is-invalid]="Info.get('branchphone')?.invalid && Info.get('branchphone')?.touched" pattern="^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$" placeholder="Enter Branch Phone Number">
+                        <span *ngIf="Info.get('branchphone')?.invalid && Info.get('branchphone')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('branchphone')?.errors?.required">Phone Number Is Required</p> 
+                            <p class="text-danger" *ngIf="Info.get('branchphone')?.errors?.pattern">Enter Valid Number</p>
+                        </span> 
                     </div> 
                 </div>  
 
@@ -115,10 +115,10 @@
                         <label>Branch City : </label>
                     </div>
                     <div class="col col-sm-8"> 
-                        <input type="text" formControlName="city" id="{{'city'+i}}" class="form-control" [class.is-invalid]="RegiForm.get('city')?.invalid && RegiForm.get('city')?.touched" placeholder="Enter City">
-                        <!-- <span *ngIf="RegiForm.get('city')?.invalid && RegiForm.get('city')?.touched">
-                            <p class="text-danger" *ngIf="RegiForm.get('city')?.errors?.required">City Is Required</p>
-                        </span>  -->
+                        <input type="text" formControlName="city" id="{{'city'+i}}" class="form-control" [class.is-invalid]="Info.get('city')?.invalid && Info.get('city')?.touched" placeholder="Enter City">
+                        <span *ngIf="Info.get('city')?.invalid && Info.get('city')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('city')?.errors?.required">City Is Required</p>
+                        </span> 
                     </div> 
                 </div>  
 
@@ -127,10 +127,10 @@
                         <label>Branch Address : </label>
                     </div>
                     <div class="col col-sm-8"> 
-                        <textarea type="text" formControlName="BranchAddress" id="{{'BranchAddress'+i}}" class="form-control" [class.is-invalid]="RegiForm.get('BranchAddress')?.invalid && RegiForm.get('BranchAddress')?.touched" placeholder="Enter Branch Address"></textarea>
-                        <!-- <span *ngIf="RegiForm.get('BranchAddress')?.invalid && RegiForm.get('BranchAddress')?.touched">
-                            <p class="text-danger" *ngIf="RegiForm.get('BranchAddress')?.errors?.required">Branch Address Is Required</p> 
-                        </span>  -->
+                        <textarea type="text" formControlName="BranchAddress" id="{{'BranchAddress'+i}}" class="form-control" [class.is-invalid]="Info.get('BranchAddress')?.invalid && Info.get('BranchAddress')?.touched" placeholder="Enter Branch Address"></textarea>
+                        <span *ngIf="Info.get('BranchAddress')?.invalid && Info.get('BranchAddress')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('BranchAddress')?.errors?.required">Branch Address Is Required</p> 
+                        </span> 
                     </div> 
                 </div>  
 
@@ -138,14 +138,14 @@
                     <div class="col col-sm-4"> 
                         <label>Branch Type : </label>
                     </div>
-                    <div class="col col-sm-8"> 
+                    <div class="col col-sm-8" [class.is-invalid]="Info.get('BranchType')?.invalid && Info.get('BranchType')?.touched"> 
                         <input type="radio" formControlName="BranchType" id="{{'BranchType'+i}}" value="Main Branch">&nbsp;
                             <span style="margin-right: 1rem;">Main Branch</span> 
                         <input type="radio" formControlName="BranchType" id="{{'BranchType'+i}}" value="Sub Branch">&nbsp;
                         <span style="margin-right: 1rem;">Sub Branch</span> 
-                        <!-- <span *ngIf="RegiForm.get('BranchType')?.invalid && RegiForm.get('BranchType')?.untouched">
-                            <p class="text-danger" *ngIf="RegiForm.get('BranchType')?.errors?.required">Branch Type Is Required</p> 
-                        </span>  -->
+                        <span *ngIf="Info.get('BranchType')?.invalid && Info.get('BranchType')?.touched">
+                            <p class="text-danger" *ngIf="Info.get('BranchType')?.errors?.required">Branch Type Is Required</p> 
+                        </span> 
                      </div>
                 </div>
 
@@ -163,13 +163,10 @@
                         <input type="checkbox" formControlName="check4" id="{{'check4'+i}}" value="Sales">&nbsp;
                             <span style="margin-right: 1rem;">Sales</span> 
                         <input type="checkbox" formControlName="check5" id="{{'check5'+i}}" value="Electronics">&nbsp; 
-                            <span style="margin-right: 1rem;">Electronics</span>
-                        <!-- <span *ngIf="RegiForm.get('Cpassword')?.invalid && RegiForm.get('Cpassword')?.touched"> -->
-                            <!-- <p class="text-danger" *ngIf="RegiForm.get('Cpassword')?.errors?.required">Password Is Required</p>  -->
-                        <!-- </span>  -->
+                            <span style="margin-right: 1rem;">Electronics</span> 
                     </div>
                 </div>
-
+  
             </div>
         </div> 
         
@@ -178,7 +175,7 @@
         </div> 
 
         <div style="margin-top: 10px;" align="center">
-            <input type="submit" class="btn btn-primary" value="Submit">  
+            <input type="submit" class="btn btn-primary" [disabled]="!RegiForm.valid" value="Submit">  
         </div>
 
     </form>

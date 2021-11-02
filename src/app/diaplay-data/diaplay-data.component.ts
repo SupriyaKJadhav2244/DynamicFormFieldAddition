@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DisplayserviceService } from '../displayservice.service';
 import { branchData } from '../model/branch';
@@ -14,11 +15,11 @@ export class DiaplayDataComponent implements OnInit {
   display: any; 
   data:customerData[] = [];
   display1: any; 
-  data1:branchData[] = [];
+  data1:branchData[] = []; 
 
-  constructor(private service:DisplayserviceService) { }
+  constructor(private service:DisplayserviceService,private routes:ActivatedRoute) { }
 
-  ngOnInit() {  
+  ngOnInit() {   
     this.service.getCustomerData().subscribe(
       (display:any)=>{ 
         // console.log(display.customer);
